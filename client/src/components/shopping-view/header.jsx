@@ -15,7 +15,7 @@ import {
 
 import { Avatar, AvatarFallback } from "../ui/avatar";
 import { useNavigate } from "react-router-dom";
-import { logOutUser } from "@/store/auth-slice";
+import { logOutUser, resetTokenAndCredentials } from "@/store/auth-slice";
 import UserCartWrapper from "./cart-wrapper";
 import { useEffect, useState } from "react";
 import { fetchCartItems } from "@/store/shop/cart-slice";
@@ -75,7 +75,9 @@ function HeaderRightContent() {
   // console.log("user from header:", user);
 
   function handleLogOut() {
-    dispatch(logOutUser());
+    dispatch(resetTokenAndCredentials());
+    sessionStorage.clear();
+    navigate("/auth/login");
   }
 
   useEffect(() => {

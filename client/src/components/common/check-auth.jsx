@@ -23,7 +23,8 @@ function CheckAuth({ isAuthenticated, user, children }) {
     !isAuthenticated &&
     !(
       location.pathname.includes("/login") ||
-      location.pathname.includes("/register")
+      location.pathname.includes("/register") ||
+      location.pathname.includes("/paypal-return")
     )
   ) {
     return <Navigate to="/auth/login" />;

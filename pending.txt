@@ -1,0 +1,18 @@
+we have to updaate the product details component...go to client->src->components->shopping-view->product-details.jsx
+client->src->components->shopping-view->listing.jsx
+
+
+sb-feji648281154@personal.example.com ---email
+o&DE5QX)  ---pwd of sanbox paypal
+
+in products details dialog we have to update the review component...
+
+
+client->source->pages->shopping-view->checkout ------isprocessing payment update..
+
+orders page sorting in admin panel..
+admin panel active tabs..
+
+orders problem in shopping view
+
+

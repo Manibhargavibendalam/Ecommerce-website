@@ -108,21 +108,21 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
 
         <div>
           <div>
-            <h1 className="text-3xl font-extrabold">{productDetails?.title}</h1>
-            <p className="text-muted-foreground text-2xl mb-5 mt-4">
+            <h1 className="text-2xl font-extrabold">{productDetails?.title}</h1>
+            <p className="text-muted-foreground text-sm mb-4 mt-2">
               {productDetails?.description}
             </p>
           </div>
           <div className="flex items-center justify-between">
             <p
-              className={`text-3xl font-bold text-primary ${
+              className={`text-xl font-bold text-primary ${
                 productDetails?.salePrice > 0 ? "line-through" : ""
               }`}
             >
               ₹{productDetails?.price}
             </p>
             {productDetails?.salePrice > 0 ? (
-              <p className="text-2xl font-bold text-muted-foreground">
+              <p className="text-xl font-bold text-muted-foreground">
                 ₹{productDetails?.salePrice}
               </p>
             ) : null}
@@ -157,8 +157,8 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
           </div>
           <Separator />
           <div className="max-h-[300px] overflow-auto">
-            <h2 className="text-xl font-bold"> Reviews</h2>
-            <div className="grid gap-6">
+            <h2 className="text-lg font-bold mb-4"> Reviews</h2>
+            <div className="grid gap-4">
               {reviews && reviews.length > 0 ? (
                 reviews.map((reviewItem) => (
                   <div className="flex gap-4">
@@ -167,25 +167,25 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
                     </Avatar>
                     <div className="grid gap-1">
                       <div className="flex items-center gap-2">
-                        <h3 className="font-bold">{reviewItem?.userName}</h3>
+                        <h3 className="font-bold text-sm">{reviewItem?.userName}</h3>
                       </div>
                       <div className="flex items-center gap-0.5">
                         <StarRatingComponent rating={reviewItem?.reviewValue} />
                       </div>
-                      <p className="text-gray-600">
+                      <p className="text-gray-600 text-sm">
                         {reviewItem?.reviewMessage}
                       </p>
                     </div>
                   </div>
                 ))
               ) : (
-                <h1>No Reviews</h1>
+                <h1 className="text-sm">No Reviews</h1>
               )}
 
             
             </div>
-            <div className="mt-10 flex flex-col gap-2">
-              <Label>Write a review</Label>
+            <div className="mt-6 flex flex-col gap-2">
+              <Label className="text-sm">Write a review</Label>
               <div className="flex gap-1">
                 <StarRatingComponent
                   rating={rating}

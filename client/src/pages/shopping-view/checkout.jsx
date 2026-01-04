@@ -30,7 +30,9 @@ function ShoppingCheckout() {
       : 0;
 
   function handleInitiatePaypalPayment() {
-    if (isPaymentStart) return; // prevent duplicate submissions
+    if (isPaymentStart) {
+      console.log("Payment is already in process",isPaymentStart);
+      return;} // prevent duplicate submissions
 
     if (cartItems.items.length === 0) {
       toast.error("Your cart is empty.Please add items to proceed");
@@ -124,6 +126,7 @@ function ShoppingCheckout() {
               isPaymentStart?"Processing Paypal Payment....":"Pay with Paypal"
              }
             </Button>
+
           </div>
         </div>
       </div>

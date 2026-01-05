@@ -78,7 +78,11 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
         toast.success("Review is added successfully");
         setReviewMsg("");
         setRating(0);
+      } else {
+        toast.error(data?.payload?.message || "For reviewing you have to buy the product first");
       }
+    }).catch((error) => {
+      toast.error(error?.message || "For reviewing you have to buy the product first");
     });
   }
 

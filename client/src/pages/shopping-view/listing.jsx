@@ -42,7 +42,7 @@ function ShoppingListing() {
 
   const { cartItems } = useSelector((state) => state.shopCart);
   const { user } = useSelector((state) => state.auth);
-  const [filters, setFilters] = useState({});
+  const [filters, setFilters] = useState(() => JSON.parse(sessionStorage.getItem("filters") || "{}"));
   const [sort, setSort] = useState("price-lowtohigh");
   const [searchParams, setSearchParams] = useSearchParams();
   const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
@@ -116,7 +116,8 @@ function ShoppingListing() {
 
   useEffect(() => {
     setSort("price-lowtohigh");
-    setFilters(JSON.parse(sessionStorage.getItem("filters") || "{}"));
+    const storedFilters = JSON.parse(sessionStorage.getItem("filters") || "{}");
+    setFilters(storedFilters);
   }, [categorySearchParam]);
 
   useEffect(() => {

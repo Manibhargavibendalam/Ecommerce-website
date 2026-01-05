@@ -51,8 +51,7 @@ const brandwithicon = [
   { id: "under-armour", label: "Under Armour", icon: WandSparkles },
   { id: "levi", label: "Levi's", icon: Flame },
   { id: "zara", label: "Zara", icon: Sparkles },
-  // { id: "h&m", label: "H&M", icon: FileHeart },
-  { id: "U.S polo", label: "U.S polo", icon: FileHeart },
+  { id: "h&m", label: "H&M", icon: FileHeart },
 ];
 
 function ShoppingHome() {
